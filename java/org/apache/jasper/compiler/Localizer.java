@@ -59,6 +59,13 @@ public class Localizer {
             }
         } catch (MissingResourceException e) {
         }
+
+        try {
+            errMsg = new String(errMsg.getBytes("ISO-8859-1"), "UTF-8");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return errMsg;
     }
 
